@@ -10,7 +10,7 @@ I really enjoy listening to music! My current playcount is 20338 🤯 . Here is 
 
 | Current Song               | Top Artist                       |
 | -------------------------- | -------------------------------- |
-| ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/41ff0ffdf3f6edf6a9bd53e79540ed01.jpg) | ![Song Cover Photo]([object Object]) |
+| ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/41ff0ffdf3f6edf6a9bd53e79540ed01.jpg) | ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png) |
 | Artist: **Ant Saunders**       | Artist: **Lauv**          |
 | Song: **U Know It's Real**           | Streams: **1395**  |
 
