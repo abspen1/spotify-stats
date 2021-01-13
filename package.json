@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/abspen1/spotify-stats/issues"
   },
-  "homepage": "https://github.com/abspen1/spotify-stats#readme"
+  "homepage": "https://github.com/abspen1/spotify-stats#readme",
+  "dependencies": {
+    "isomorphic-unfetch": "^3.1.0"
+  }
 }
