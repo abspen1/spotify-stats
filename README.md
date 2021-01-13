@@ -6,7 +6,7 @@ Currently I am only using the JavaScript integration which avoids using redis.
 
 ## Most recent song
 
-I really enjoy listening to music! My current playcount is 20338 🤯 . Here is my top artist and who I am listening to now!
+I really enjoy listening to music! My current playcount is 20338 🤯 . Here is what I am listening to now and also, my top artist and song of all time!
 
 | Last Listened              | Top Artist                       | Top Song                          |
 | -------------------------- | -------------------------------- | --------------------------------- |
