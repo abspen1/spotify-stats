@@ -6,13 +6,13 @@ Currently I am only using the JavaScript integration which avoids using redis.
 
 ## Most recent song
 
-I really enjoy listening to music! My current playcount is {playcount} 🤯 . Here is my top artist and who I am listening to now!
+I really enjoy listening to music! My current playcount is 20338 🤯 . Here is my top artist and who I am listening to now!
 
 | Current Song               | Top Artist                       |
 | -------------------------- | -------------------------------- |
-| ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/41ff0ffdf3f6edf6a9bd53e79540ed01.jpg) | ![Song Cover Photo]({artistImg}) |
-| Artist: **Ant Saunders**       | Artist: **{topArtist}**          |
-| Song: **U Know It's Real**           | Streams: **{topArtistStreams}**  |
+| ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/41ff0ffdf3f6edf6a9bd53e79540ed01.jpg) | ![Song Cover Photo]([object Object]) |
+| Artist: **Ant Saunders**       | Artist: **Lauv**          |
+| Song: **U Know It's Real**           | Streams: **1395**  |
 
 ## Works Cited
 
