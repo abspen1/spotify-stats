@@ -6,8 +6,8 @@ This is an auto updating readme test repository
 
 ![Song Cover Photo]({img})
 
-- **Artist: {artist}**
-- **Song: {song}**
+- Artist: **{artist}**
+- Song: **{song}**
 
 ## Works Cited
 
