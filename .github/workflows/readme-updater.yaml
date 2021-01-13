@@ -1,8 +1,8 @@
-name: Generate README every 4 hours
+name: Generate README every minute
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/1 * * * *'
   workflow_dispatch:
 
 jobs:
