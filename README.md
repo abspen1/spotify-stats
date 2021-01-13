@@ -4,10 +4,10 @@ This is an auto updating readme test repository
 
 ## Most recent song
 
-![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png)
+![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/64s/553e3fe68f8cf27fe065ca14148ef068.jpg)
 
-- **Artist: XUITCASECITY**
-- **Song: Cherry Red**
+- Artist: **Social House**
+- Song: **Magic in the Hamptons (feat. Lil Yachty)**
 
 ## Works Cited
 
