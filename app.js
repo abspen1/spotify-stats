@@ -60,10 +60,10 @@ async function main() {
         .replace("{playcount}", playcount)
         .replace("{topArtist}", topArtistName)
         .replace("{topArtistStreams}", topArtistStreams)
-        .replace("{artistImg}", topArtistImg)
+        // .replace("{artistImg}", topArtistImg)
         .replace("{topSongArtist}", topSongArtist)
         .replace("{topSongName}", topSongName)
-        .replace("{topSongImg}", topSongImg);
+        // .replace("{topSongImg}", topSongImg);
 
     await fs.writeFile("README.md", readme);
 }
