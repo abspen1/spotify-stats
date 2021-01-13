@@ -1,13 +1,9 @@
-name: Generate README every 24hours and on push
+name: Generate README on push
 
 on:
   push:
     branches:
       - master
-
-  schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
 
 jobs:
   Build:
