@@ -1,0 +1,19 @@
+{
+  "name": "spotify-stats",
+  "version": "1.0.0",
+  "description": "GitHub README updater",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abspen1/spotify-stats.git"
+  },
+  "author": "Austin Spencer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abspen1/spotify-stats/issues"
+  },
+  "homepage": "https://github.com/abspen1/spotify-stats#readme"
+}
