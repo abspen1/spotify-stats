@@ -1,32 +1,33 @@
 require("isomorphic-unfetch");
-var Redis = require('ioredis')
 const { promises: fs } = require("fs");
 const path = require("path");
 
-const redisPass = process.env.REDIS_PASS;
-const redisHost = process.env.REDIS_HOST;
+const API_KEY = process.env.API_KEY
+const SECRET_KEY = process.env.SECRET_KEY
+const USER = process.env.USER
 
-console.log(redisHost)
+const API_ROOT = "http://ws.audioscrobbler.com/2.0/"
 
-var redis = new Redis({
-    port: 6379,          // Redis port
-    host: redisHost,   	 // Redis host
-    password: redisPass, // Redis pass
-    db: 11,				 // Redis database
-});
+const SONG_URL = `${API_ROOT}?method=user.getrecenttracks&user=${USER}&limit=1&api_key=${API_KEY}&format=json`
 
 async function main() {
     const readmeTemplate = (
         await fs.readFile(path.join(process.cwd(), "./README.template.md"))
     ).toString("utf-8");
     
-    const name = await redis.hget('current-track', 'Name')
-    const artist = await redis.hget('current-track', 'Artist')
-    const img = await redis.hget('current-track', 'Image')
+    const data = async (url) => {
+        const r = await fetch(url);
+        return await r.json();
+    }
 
+    dataJSON = await data(SONG_URL)
+    songInfo = dataJSON.recenttracks.track[0]
+    const artist = songInfo.artist['#text']
+    const song = songInfo.name
+    const img = songInfo.image[1]['#text']
 
     const readme = readmeTemplate
-        .replace("{song}", name)
+        .replace("{song}", song)
         .replace("{artist}", artist)
         .replace("{img}", img);
 
