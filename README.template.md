@@ -5,8 +5,9 @@ This is an auto updating readme test repository
 ## Most recent song
 
 ![Song Cover Photo]({img})
-**{song}
-**{artist}
+
+- **Artist: {artist}**
+- **Song: {song}**
 
 ## Works Cited
 
