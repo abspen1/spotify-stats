@@ -5,8 +5,9 @@ This is an auto updating readme test repository
 ## Most recent song
 
 ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/64s/2a96cbd8b46e442fc41c2b86b821562f.png)
-**Cherry Red
-**XUITCASECITY
+
+- **Artist: XUITCASECITY**
+- **Song: Cherry Red**
 
 ## Works Cited
 
