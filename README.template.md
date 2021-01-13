@@ -8,11 +8,11 @@ Currently I am only using the JavaScript integration which avoids using redis.
 
 I really enjoy listening to music! My current playcount is {playcount} 🤯 . Here is my top artist and who I am listening to now!
 
-| Last Listened              | Top Artist                       |
-| -------------------------- | -------------------------------- |
-| ![Song Cover Photo]({img}) | ![Song Cover Photo]({artistImg}) |
-| Artist: **{artist}**       | Artist: **{topArtist}**          |
-| Song: **{song}**           | Streams: **{topArtistStreams}**  |
+| Last Listened              | Top Artist                       | Top Song                          |
+| -------------------------- | -------------------------------- | --------------------------------- |
+| ![Song Cover Photo]({img}) | ![Song Cover Photo]({artistImg}) | ![Song Cover Photo]({topSongImg}) |
+| Artist: **{artist}**       | Artist: **{topArtist}**          | Artist: **{topSongArtist}**       |
+| Title: **{song}**          | Streams: **{topArtistStreams}**  | Title: **{topSongName}**          |
 
 ## Works Cited
 

@@ -3,12 +3,13 @@ const { promises: fs } = require("fs");
 const path = require("path");
 
 const API_KEY = process.env.API_KEY
-const SECRET_KEY = process.env.SECRET_KEY
 const USER = process.env.USER
 
 const API_ROOT = "http://ws.audioscrobbler.com/2.0/"
 
-const SONG_URL = `${API_ROOT}?method=user.getrecenttracks&user=${USER}&limit=1&api_key=${API_KEY}&format=json`
+const RECENT_URL = `${API_ROOT}?method=user.getrecenttracks&user=${USER}&limit=1&api_key=${API_KEY}&format=json`
+
+const SONG_URL = `${API_ROOT}?method=user.gettoptracks&user=${USER}&limit=1&api_key=${API_KEY}&format=json`
 
 const ARTIST_URL = `${API_ROOT}?method=user.gettopartists&user=${USER}&limit=1&api_key=${API_KEY}&format=json`
 
@@ -24,7 +25,14 @@ async function main() {
         return await r.json();
     }
 
-    recentJSON = await get(SONG_URL)
+    const getTopTrack = async (artist) => {
+        const url = `${API_ROOT}?method=artist.gettoptracks&artist=${artist}&limit=1&api_key=${API_KEY}&format=json`
+        const r = await fetch(url);
+        trackJSON = await r.json();
+        return trackJSON.toptracks.track[0].image[2]['#text']
+    }
+
+    recentJSON = await get(RECENT_URL)
     songInfo = recentJSON.recenttracks.track[0]
     const artist = songInfo.artist['#text']
     const song = songInfo.name
@@ -34,7 +42,13 @@ async function main() {
     topArtist = artistJSON.topartists.artist[0]
     const topArtistName = topArtist.name
     const topArtistStreams = topArtist.playcount
-    const topArtistImg = topArtist.image[2]['#text']
+    const topArtistImg = await getTopTrack(topArtistName)
+
+    songJSON = await get(SONG_URL)
+    songJSON = songJSON.toptracks.track[0]
+    const topSongArtist = songJSON.artist.name
+    const topSongName = songJSON.name
+    const topSongImg = songJSON.image[2]['#text']
 
     userJSON = await get(USER_URL)
     const playcount = userJSON.user.playcount
@@ -46,7 +60,10 @@ async function main() {
         .replace("{playcount}", playcount)
         .replace("{topArtist}", topArtistName)
         .replace("{topArtistStreams}", topArtistStreams)
-        .replace("{artistImg}", topArtistImg);
+        .replace("{artistImg}", topArtistImg)
+        .replace("{topSongArtist}", topSongArtist)
+        .replace("{topSongName}", topSongName)
+        .replace("{topSongImg}", topSongImg);
 
     await fs.writeFile("README.md", readme);
 }
