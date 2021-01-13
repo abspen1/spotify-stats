@@ -1,6 +1,10 @@
 name: Generate README every minute
 
 on:
+  push:
+    branches:
+      - master
+
   schedule:
     - cron: '*/1 * * * *'
   workflow_dispatch:
@@ -11,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Let the magic happen
+      - name: Run
         uses: actions/setup-node@v1
         with:
           node-version: 14.6.0
