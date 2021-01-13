@@ -1,68 +1,55 @@
-
-# https://github.com/plamere/spotipy/blob/master/spotipy/util.py
-# http://www.acmesystems.it/python_httpd
-
+import json
 import os
-import spotipy
-import spotipy.util as util
-import csv
+import redis
+import requests
+import schedule
+import time
+
+APP_NAME = "music-client"
+API_KEY = os.getenv("API_KEY")
+SECRET_KEY = os.getenv("SECRET_KEY")
+USER = "Abspen1"
 
 
-# Authentication
-# Register an app with https://developer.spotify.com/dashboard/ and paste your Client ID and Client Secret on the line below
-token = spotipy.oauth2.SpotifyClientCredentials(
-    client_id=os.getenv("CLIENT_ID"), client_secret=os.getenv("CLIENT_SECRET"))
-cache_token = token.get_access_token()
-spotify = spotipy.Spotify(cache_token)
+API_ROOT = "http://ws.audioscrobbler.com/2.0/"
 
-# Playlist Track Data
-# Purpose: Given a Spotify Playlist, get detailed track information for every song
+TOKEN = f"{API_ROOT}?method=auth.gettoken&api_key={API_KEY}&format=json"
 
-# Get the first 100 (max) songs in the playlist
-results = spotify.user_playlist_tracks(
-    'spotify:user:1236000504', 'spotify:playlist:4RYqSxxD4WIvUahaJY4ZUR', limit=100, offset=0)
+RECENT_TRACKS = f"{API_ROOT}?method=user.getrecenttracks&user=rj&api_key={API_KEY}&format=json"
 
-playlists = spotify.user_playlist('spotify:user:1236000504')
-print(playlists)
-'''
-# Store results in a tracks array
-tracks = results['items']
+# "?method=user.getrecenttracks&user={USER}&api_key={API_KEY}&format=json"
 
-# Continue paginating through until all results are returned
-while results['next']:
-    results = spotify.next(results)
-    tracks.extend(results['items'])
+########## Sleeper API Functions ###########
 
-# Open and configure output csv
-with open('playlist_track_data.csv', mode='w') as employee_file:
-    spotify_writer = csv.writer(
-        employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
 
-    # Write csv headers
-    spotify_writer.writerow(['Index', 'Artist Name', 'Track Name', 'Release Date', 'Danceability', 'Energy', 'Key', 'Loudness',
-                             'Mode', 'Speechiness', 'Accousticness', 'Instrumentalness', 'Liveness', 'Valence', 'Tempo', 'Duration MS', 'Time Signature'])
+def get_token():
+    r = requests.get(TOKEN)
+    return json.loads(r.content)
 
-    # index
-    i = 0
 
-    # for each track in the playlist, gather more information and write to csv
-    for item in (tracks):
-        i = i + 1
-        track = item['track']
+def get_recent_tracks():
+    payload = {'limit': 1, 'user': 'Abspen1', 'api_key': API_KEY}
+    r = requests.get(RECENT_TRACKS, params=payload)
+    return json.loads(r.content)
 
-        # if the track is a local file, skip it
-        if "local" in track['uri']:
-            continue
 
-        # Two more API calls to get more track-related information
-        audio_features = spotify.audio_features(track['uri'])[0]
-        release_date = spotify.track(track['uri'])['album']['release_date']
+def main():
+    jsonData = get_recent_tracks()
+    data = jsonData['recenttracks']['track']
+    for item in data:
+        print(item['name'])
+        print(item['artist']['#text'])
 
-        # print to console for debugging
-        print("   %d %32.32s %s %s" %
-              (i, track['artists'][0]['name'], track['name'], release_date))
 
-        # write to csv
-        spotify_writer.writerow([i, track['artists'][0]['name'], track['name'], release_date, audio_features['danceability'], audio_features['energy'], audio_features['key'], audio_features['loudness'], audio_features['mode'], audio_features['speechiness'], audio_features['acousticness'], audio_features['instrumentalness'], audio_features['liveness'], audio_features['valence'], audio_features['tempo'], audio_features['duration_ms'], audio_features['time_signature']]
-                                )
-'''
+if __name__ == "__main__":
+    main()
+
+# schedule.every().day.at("06:00").do(main)
+
+# while True:
+#     try:
+#         schedule.run_pending()
+#         time.sleep(1)
+#     except Exception as identifier:
+#         print(identifier)
+#         time.sleep(1)
