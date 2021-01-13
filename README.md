@@ -4,10 +4,10 @@ This is an auto updating readme test repository
 
 ## Most recent song
 
-![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/64s/553e3fe68f8cf27fe065ca14148ef068.jpg)
+![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/dce14c9a84ec2a59c84996ae9c958910.jpg)
 
-- Artist: **Social House**
-- Song: **Magic in the Hamptons (feat. Lil Yachty)**
+- Artist: **Quinn XCII**
+- Song: **Stacy**
 
 ## Works Cited
 
