@@ -1,4 +1,4 @@
-name: Generate README every minute
+name: Generate README every 24hours and on push
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
@@ -31,8 +31,8 @@ jobs:
       - name: Add to git repo
         run: |
           git add .
-          git config --global user.name "Your Name"
-          git config --global user.email "Your E-Mail"
+          git config --global user.name "abspen1"
+          git config --global user.email "abspencer2097@gmail.com"
           git commit -m "[Magic] Automated README update"
       - name: Push
         uses: ad-m/github-push-action@master
