@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/abspen1/spotify-stats#readme",
   "dependencies": {
+    "fs": "0.0.1-security",
+    "ioredis": "^4.19.4",
     "isomorphic-unfetch": "^3.1.0"
   }
 }
