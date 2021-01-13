@@ -6,6 +6,8 @@ const path = require("path");
 const redisPass = process.env.REDIS_PASS;
 const redisHost = process.env.REDIS_HOST;
 
+console.log(redisHost)
+
 var redis = new Redis({
     port: 6379,          // Redis port
     host: redisHost,   	 // Redis host
