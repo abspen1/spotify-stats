@@ -24,7 +24,7 @@ async function main() {
     songInfo = dataJSON.recenttracks.track[0]
     const artist = songInfo.artist['#text']
     const song = songInfo.name
-    const img = songInfo.image[1]['#text']
+    const img = songInfo.image[2]['#text']
 
     const readme = readmeTemplate
         .replace("{song}", song)
