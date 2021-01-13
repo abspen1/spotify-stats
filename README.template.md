@@ -1,6 +1,6 @@
 # Last.fm pulling data from Spotify
 
-This is an auto updating readme test repository
+Using Python & JavaScript to access last.fm and view my most recently listened to tracks on Spotify. This is a repo only for testing and setting up my profile readme. Check out my profile's README with this integrated!
 
 ## Most recent song
 
