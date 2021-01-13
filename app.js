@@ -34,7 +34,7 @@ async function main() {
     topArtist = artistJSON.topartists.artist[0]
     const topArtistName = topArtist.name
     const topArtistStreams = topArtist.playcount
-    const topArtistImg = topArtist.image[2]
+    const topArtistImg = topArtist.image[2]['#text']
 
     userJSON = await get(USER_URL)
     const playcount = userJSON.user.playcount
