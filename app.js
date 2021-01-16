@@ -71,7 +71,7 @@ async function main() {
         // .replace("{artistImg}", topArtistImg)
         .replace("{topSongArtist}", topSongArtist)
         .replace("{topSongName}", topSongName)
-        .replace("number", number);
+        .replace("{number}", number);
         // .replace("{topSongImg}", topSongImg);
 
     await fs.writeFile("README.md", readme);
