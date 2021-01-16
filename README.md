@@ -8,11 +8,11 @@ Currently I am only using the JavaScript integration which avoids using redis.
 
 I really enjoy listening to music! My current playcount is 20341 🤯 . Here is what I am listening to now and also, my top artist and song of all time!
 
-| Last Listened              |
-| -------------------------- |
-| ![Song Cover Photo](https://lastfm.freetls.fastly.net/i/u/174s/adc3ddeac7b7f81f9d911159756aaa64.jpg) |
-| Artist: **Lauv**       |
-| Title: **Mine (You Can't Find Love in Mollywood)**          |
+| Last Listened        |
+| -------------------- |
+| ![Photo](https://lastfm.freetls.fastly.net/i/u/174s/adc3ddeac7b7f81f9d911159756aaa64.jpg)      |
+| Artist: **Lauv** |
+| Title: **Mine (You Can't Find Love in Mollywood)**    |
 
 | Top Artist                      | Top Song                    |
 | ------------------------------- | --------------------------- |
