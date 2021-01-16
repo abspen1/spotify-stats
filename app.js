@@ -25,6 +25,10 @@ async function main() {
         return await r.json();
     }
 
+    const getRandomInt = max => {
+        return Math.floor(Math.random() * Math.floor(max));
+    }
+
     const getTopTrack = async (artist) => {
         const url = `${API_ROOT}?method=artist.gettoptracks&artist=${artist}&limit=1&api_key=${API_KEY}&format=json`
         const r = await fetch(url);
@@ -50,8 +54,12 @@ async function main() {
     const topSongName = songJSON.name
     const topSongImg = songJSON.image[2]['#text']
 
+    const number = getRandomInt(999999)
+
     userJSON = await get(USER_URL)
     const playcount = userJSON.user.playcount
+
+
 
     const readme = readmeTemplate
         .replace("{song}", song)
@@ -63,6 +71,7 @@ async function main() {
         // .replace("{artistImg}", topArtistImg)
         .replace("{topSongArtist}", topSongArtist)
         .replace("{topSongName}", topSongName)
+        .replace("number", number);
         // .replace("{topSongImg}", topSongImg);
 
     await fs.writeFile("README.md", readme);
