@@ -24,4 +24,4 @@ I really enjoy listening to music! My current playcount is 20426 🤯 . Here is 
 - Checkout a page for how to get the workflow going [here](https://dev.to/gargakshit/how-i-added-my-spotify-statistics-to-my-github-readme-4jdd)
 - I use last.fm API since Spotify API would require token to get read only data which last.fm does not
 - Checkout [last.fm/api](https://www.last.fm/api)
-- Random number: 564728
+- Random number: 765446
