@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - master
-  schedule:
-    - cron: '0 */3 * * *' # Run every 3 hours
-  workflow_dispatch:
+  # schedule:
+  #   - cron: '0 */3 * * *' # Run every 3 hours
+  # workflow_dispatch:
 
 jobs:
   Build:
